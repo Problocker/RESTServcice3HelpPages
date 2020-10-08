@@ -52,7 +52,6 @@ namespace RestItemService.Controllers
             }
             return NotFound($"Item ID {id} ikke fundet");
         }
-
         // POST api/<ItemsController>
         [HttpPost]
         public void Post([FromBody] Item value)
