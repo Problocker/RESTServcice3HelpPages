@@ -24,6 +24,12 @@ namespace RestItemService.Controllers
             new Item(5, "Milk", "Low", 55.8)
         };
 
+
+        /// <summary>
+        /// Henter alle items fra listen
+        /// </summary>
+        /// <returns>List</returns>
+
         // GET: api/<ItemsController>
         [HttpGet]
         public IEnumerable<Item> Get()
@@ -39,6 +45,12 @@ namespace RestItemService.Controllers
         //    return items.Find(i => i.Id == id);
         //}
 
+        ///<summary>
+        ///Get specific item from list by its id
+        ///</summary>
+        ///<param name="id">Id to get item from</param>
+        ///<returns>specific item by id</returns>
+
         // GET api/<ItemsController>/5
         [HttpGet] //Http request Method
         [Route("{id}")] //Http request URI/URL
@@ -52,12 +64,24 @@ namespace RestItemService.Controllers
             }
             return NotFound($"Item ID {id} ikke fundet");
         }
+
+        /// <summary>
+        /// Adds item to list
+        /// </summary>
+        /// <param name="value">Item to add</param>
+
         // POST api/<ItemsController>
         [HttpPost]
         public void Post([FromBody] Item value)
         {
             items.Add(value);
         }
+
+        /// <summary>
+        /// Changes values in an item
+        /// </summary>
+        /// <param name="id">Id of item</param>
+        /// <param name="value">New values</param>
 
         // PUT api/<ItemsController>/5
         [HttpPut]
@@ -74,6 +98,12 @@ namespace RestItemService.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Deletes item by id
+        /// </summary>
+        /// <param name="id">Id of item</param>
+            
         // DELETE api/<ItemsController>/5
         [HttpDelete]
         [Route("{id}")]
@@ -83,6 +113,13 @@ namespace RestItemService.Controllers
             items.Remove(item);
         }
 
+
+        /// <summary>
+        /// Search through names from the list and returns them.
+        /// </summary>
+        /// <param name="substring">name to find</param>
+        /// <returns>items with specific name</returns>
+
         //GetFromSubstring, Substring 
         [HttpGet]
         [Route("Name/{substring}")]
@@ -90,6 +127,13 @@ namespace RestItemService.Controllers
         {
             return items.FindAll(i => i.Name.ToLower().Contains(substring.ToLower())); //Bruger ToLower så den ikke klager over store tegn.
         }
+
+
+        /// <summary>
+        /// Gets items with specific quality
+        /// </summary>
+        /// <param name="quality">quality input</param>
+        /// <returns>Items with specific quality</returns>
 
         //Quality, mængder, ‘Low’, ‘Middle’ or ‘High’
         [HttpGet]
@@ -99,7 +143,12 @@ namespace RestItemService.Controllers
             return items.FindAll(i => i.Quality.ToLower().Contains(quality.ToLower()));
         }
 
-        //
+        /// <summary>
+        /// Search for items sith specific quantities
+        /// </summary>
+        /// <param name="filter">Class filterItem</param>
+        /// <returns>items with specific quantities</returns>
+
         [HttpGet]//Http request Method
         [Route("Search")]
         public IEnumerable<Item> GetWithFilter([FromQuery] FilterItem filter)
