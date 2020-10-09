@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestItemService", "RestItemService\RestItemService.csproj", "{B07F3D60-8D53-4F1C-9F03-6BB9C0D4D350}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestItemService", "RestItemService\RestItemService.csproj", "{B07F3D60-8D53-4F1C-9F03-6BB9C0D4D350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLib", "ModelLib\ModelLib.csproj", "{A08AA3B9-F911-4BBF-919F-A5F653D46977}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B07F3D60-8D53-4F1C-9F03-6BB9C0D4D350}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B07F3D60-8D53-4F1C-9F03-6BB9C0D4D350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B07F3D60-8D53-4F1C-9F03-6BB9C0D4D350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A08AA3B9-F911-4BBF-919F-A5F653D46977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08AA3B9-F911-4BBF-919F-A5F653D46977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A08AA3B9-F911-4BBF-919F-A5F653D46977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A08AA3B9-F911-4BBF-919F-A5F653D46977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
